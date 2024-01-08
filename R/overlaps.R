@@ -18,7 +18,6 @@
 #' my_overlaps <- clustermole_overlaps(genes = my_genes, species = "hs")
 #' head(my_overlaps)
 clustermole_overlaps <- function(genes, species) {
-
   # check that the genes vector seems reasonable
   if (!is(genes, "character")) {
     stop("genes is not a character vector")

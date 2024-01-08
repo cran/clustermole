@@ -1,4 +1,4 @@
-## ---- include=FALSE-----------------------------------------------------------
+## ----include=FALSE------------------------------------------------------------
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
@@ -18,12 +18,6 @@ markers
 
 ## ----celltypes-list-----------------------------------------------------------
 markers_list <- split(x = markers$gene, f = markers$celltype_full)
-
-## ----celltypes-count----------------------------------------------------------
-length(unique(markers$celltype_full))
-
-## ----celltypes-dbs------------------------------------------------------------
-sort(unique(markers$db))
 
 ## ----overlaps, eval=FALSE-----------------------------------------------------
 #  my_overlaps <- clustermole_overlaps(genes = my_genes_vec, species = "hs")
