@@ -4,18 +4,30 @@
 \alias{clustermole_overlaps}
 \title{Cell types based on overlap of marker genes}
 \usage{
-clustermole_overlaps(genes, species)
+clustermole_overlaps(genes, species, max_p = 0.05, max_fdr = 1)
 }
 \arguments{
-\item{genes}{A vector of genes.}
+\item{genes}{A character vector of gene symbols.}
 
-\item{species}{Species: \code{hs} for human or \code{mm} for mouse.}
+\item{species}{Gene symbol species: \code{hs} for human or \code{mm} for mouse.}
+
+\item{max_p}{Maximum p-value to return. Defaults to \code{0.05}.}
+
+\item{max_fdr}{Maximum FDR to return. Defaults to \code{1}.}
 }
 \value{
-A data frame of enrichment results with hypergeometric test p-values.
+A data frame with one row per returned signature:
+\itemize{
+\item \code{overlap}: Unique gene count shared by the input and signature.
+\item \code{p_value}: Hypergeometric test p-value.
+\item \code{fdr}: Benjamini-Hochberg adjusted p-value across all tested signatures.
+\item \code{n_genes}: Unique gene count in the signature for the requested species.
+\item Signature metadata (see \code{\link[=clustermole_markers]{clustermole_markers()}}).
+}
 }
 \description{
-Perform overrepresentation analysis for a set of genes compared to all cell type signatures.
+Perform overrepresentation analysis for a set of genes compared to all cell
+type signatures.
 }
 \examples{
 my_genes <- c("CD2", "CD3D", "CD3E", "CD3G", "TRAC", "TRBC2", "LTB")

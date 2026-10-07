@@ -1,4 +1,10 @@
-# clustermole: exploratory scRNA-seq cell type analysis
+# clustermole: cell type marker database
+
+<!-- badges: start -->
+[![CRAN](https://www.r-pkg.org/badges/version/clustermole)](https://cran.r-project.org/package=clustermole)
+[![R-CMD-check](https://github.com/igordot/clustermole/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/igordot/clustermole/actions/workflows/R-CMD-check.yaml)
+[![codecov](https://codecov.io/gh/igordot/clustermole/graph/badge.svg)](https://app.codecov.io/gh/igordot/clustermole)
+<!-- badges: end -->
 
 The clustermole R package (available on [CRAN](https://cran.r-project.org/package=clustermole)) provides methods to query cell identity markers sourced from a variety of databases.
 It includes three primary features:

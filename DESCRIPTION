@@ -1,25 +1,28 @@
 Type: Package
 Package: clustermole
-Title: Unbiased Single-Cell Transcriptomic Data Cell Type
-        Identification
-Version: 1.1.1
+Title: Cell Type Marker Database for Single-Cell RNA-Seq Data
+Version: 1.2.0
 Authors@R: 
-    person("Igor", "Dolgalev", , "igor.dolgalev@nyumc.org", role = c("aut", "cre"), comment = c(ORCID = "0000-0003-4451-126X"))
-Description: Assignment of cell type labels to single-cell RNA sequencing (scRNA-seq) clusters is often a time-consuming process that involves manual inspection of the cluster marker genes complemented with a detailed literature search. This is especially challenging when unexpected or poorly described populations are present. The clustermole R package provides methods to query thousands of human and mouse cell identity markers sourced from a variety of databases.
+    person("Igor", "Dolgalev", , "igor.dolgalev@nyumc.org", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0003-4451-126X"))
+Description: Provides a meta-database of thousands of human and mouse cell
+    identity markers curated from multiple sources, along with methods for
+    cell type prediction based on marker gene overlaps or gene set
+    enrichment.
 License: MIT + file LICENSE
 URL: https://igordot.github.io/clustermole/
 BugReports: https://github.com/igordot/clustermole/issues
 Depends: R (>= 4.3)
-Imports: dplyr, GSEABase, GSVA (>= 1.50.0), magrittr, methods, rlang,
-        singscore, tibble, tidyr, utils
-Suggests: covr, knitr, rmarkdown, roxygen2, testthat
-VignetteBuilder: knitr
+Imports: dplyr (>= 1.1.0), methods, rlang, stats, tibble, tidyr, utils
+Suggests: covr, GSEABase, GSVA (>= 1.50.0), knitr, rmarkdown, roxygen2,
+        singscore, testthat
 biocViews:
+Config/roxygen2/version: 8.1.0
 Encoding: UTF-8
-RoxygenNote: 7.2.3
 NeedsCompilation: no
-Packaged: 2024-01-08 15:22:18 UTC; id460
-Author: Igor Dolgalev [aut, cre] (<https://orcid.org/0000-0003-4451-126X>)
+Packaged: 2026-10-07 02:27:37 UTC; id460
+Author: Igor Dolgalev [aut, cre] (ORCID:
+    <https://orcid.org/0000-0003-4451-126X>)
 Maintainer: Igor Dolgalev <igor.dolgalev@nyumc.org>
 Repository: CRAN
-Date/Publication: 2024-01-08 22:20:06 UTC
+Date/Publication: 2026-10-07 02:50:02 UTC

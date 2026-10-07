@@ -7,13 +7,33 @@
 clustermole_markers(species = c("hs", "mm"))
 }
 \arguments{
-\item{species}{Species: \code{hs} for human or \code{mm} for mouse.}
+\item{species}{Gene symbol species: \code{hs} for human or \code{mm} for mouse.}
 }
 \value{
-A data frame of cell type markers (one gene per row).
+A data frame of cell type markers with these columns:
+\itemize{
+\item \code{gene}: Canonical gene symbol for the requested species.
+\item \code{gene_original}: Original source gene symbol.
+\item \code{celltype_full}: Full cell type signature identifier.
+\item \code{db}: Source database.
+\item \code{celltype}: Cell type label.
+\item \code{organ}: Organ label.
+\item \code{species}: Source signature species, if known.
+\item \code{n_genes}: Gene count per signature.
+}
 }
 \description{
-Retrieve the full list of cell type markers in the \code{clustermole} database.
+Retrieve cell type markers from the clustermole database.
+}
+\details{
+The \code{gene} column uses the official NCBI symbols for the requested species.
+The package maps the aliases in each source database to these symbols. The
+\code{gene_original} column preserves the symbol from the source. The source
+databases include both human and mouse cell type markers. The package maps
+them across species with ortholog data from the Alliance of Genome Resources
+and keeps only reciprocal best matches. The output does not include genes
+that have no ortholog in the requested species and does not include
+signatures with fewer than five genes.
 }
 \examples{
 markers <- clustermole_markers()
